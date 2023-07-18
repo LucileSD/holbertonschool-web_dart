@@ -1,11 +1,3 @@
-/*String longestUniqueSubstring(String str) {
-  Set resultSet = {};
-  for (int idx = 0; idx < str.length; idx++) {
-    resultSet.add(str[idx]);
-  }
-  return resultSet.join('');
-}*/
-
 String longestUniqueSubstring(String str) {
   Map<int, String> saveSet = {};
   int count = 0;
