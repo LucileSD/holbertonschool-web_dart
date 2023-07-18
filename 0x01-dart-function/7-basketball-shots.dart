@@ -1,22 +1,16 @@
 int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
-  final Map<String, int> pointValues = {
-    'Free Throw': 1,
-    '2 pointer': 2,
-    '3 pointer': 3,
-  };
-
+  int index = 0;
   int totalPointsA = 0;
   teamA.forEach((key, value) {
-    if (pointValues.containsKey(key)) {
-      totalPointsA += (value) * pointValues[key]!;
-    }
+    index += 1;
+    totalPointsA += value * index;
   });
 
+  index = 0;
   int totalPointsB = 0;
   teamB.forEach((key, value) {
-    if (pointValues.containsKey(key)) {
-      totalPointsB += (value) * pointValues[key]!;
-    }
+    index += 1;
+    totalPointsB += value * index;
   });
 
   if (totalPointsA > totalPointsB) {
