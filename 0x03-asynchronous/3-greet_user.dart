@@ -1,12 +1,12 @@
+import 'dart:convert';
+
 import '3-util.dart';
 
 Future<String> greetUser() async {
   try {
     String object_fetch = await fetchUserData();
-    List object_split = object_fetch.split(',');
-    List user_split = object_split[1].split(':');
-    String name_quotes = user_split[1].replaceAll('"', '');
-    String name = name_quotes.replaceAll('}', '');
+    Map<String, dynamic> data = jsonDecode(object_fetch);
+    String name = data['username'];
     return ('Hello ${name}');
   } catch (err) {
     return ('error caught: ${err}');
